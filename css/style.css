@@ -3838,7 +3838,7 @@ textarea.form-control-lg {
 }
 
 .nav {
-  --bs-nav-link-padding-x: 1rem;
+  --bs-nav-link-padding-x: 0.5rem;
   --bs-nav-link-padding-y: 0.5rem;
   --bs-nav-link-font-weight: ;
   --bs-nav-link-color: var(--bs-link-color);
@@ -14637,35 +14637,66 @@ footer {
   -webkit-backdrop-filter: blur(60px);
   border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
-footer .nav-link {
+footer .navbar-nav {
+  max-width: 170px;
+}
+@media (max-width: 767.98px) {
+  footer .navbar-nav {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 767.98px) {
+  footer .navbar-nav.dc-navbar-border .nav-item:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 12px;
+    margin-bottom: -12px;
+  }
+}
+footer .navbar-nav .nav-item {
+  padding: 12px 0;
+}
+footer .navbar-nav .nav-item:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+footer .navbar-nav .nav-item:first-child {
+  padding-top: 5px;
+}
+@media (max-width: 767.98px) {
+  footer .navbar-nav .nav-item:first-child {
+    padding-top: 12px;
+  }
+}
+footer .navbar-nav .nav-item:last-child {
+  padding-bottom: 0;
+}
+footer .navbar-nav .nav-link {
   padding: 0;
 }
-footer .dc-kontact,
-footer .navbar {
+footer .navbar-nav .dc-kontact,
+footer .navbar-nav .navbar {
   width: 170px;
 }
 @media (max-width: 576px) {
-  footer .dc-kontact,
-  footer .navbar {
+  footer .navbar-nav .dc-kontact,
+  footer .navbar-nav .navbar {
     width: 100%;
     display: block;
   }
 }
-
-.dc-kontact a {
+footer .dc-kontact a {
   display: block;
   text-decoration: none;
   color: #fff;
   transition: opacity 0.3s ease 0s;
 }
-.dc-kontact a[class*=ic-] {
+footer .dc-kontact a[class*=ic-] {
   font-size: 28px;
 }
-.dc-kontact a:hover {
+footer .dc-kontact a:hover {
   opacity: 0.75;
 }
-
-.dc-partners {
+footer .dc-partners {
   margin-top: 70px;
   padding: 12px;
   gap: 18px;
@@ -14675,15 +14706,15 @@ footer .navbar {
   backdrop-filter: blur(60px);
 }
 @media (max-width: 767.98px) {
-  .dc-partners {
+  footer .dc-partners {
     margin-top: 35px;
   }
 }
-.dc-partners > .row {
+footer .dc-partners > .row {
   --bs-gutter-x: 18px;
   --bs-gutter-y: 18px;
 }
-.dc-partners > .row img {
+footer .dc-partners > .row img {
   height: 60px;
   width: 100%;
 }
