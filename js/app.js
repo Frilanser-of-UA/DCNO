@@ -2,15 +2,12 @@ var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
 function isIE() {
-	ua = navigator.userAgent;
-	var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
-	return is_ie;
+    ua = navigator.userAgent;
+    var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+    return is_ie;
 }
 if (isIE()) {
-	document.querySelector('html').classList.add('ie');
-}
-if (isMobile.any()) {
-	document.querySelector('html').classList.add('_touch');
+    document.querySelector('html').classList.add('ie');
 }
 ; //Функция которая определяет точскрин или десктоп
 function testWebP(callback) {
@@ -28,148 +25,17 @@ testWebP(function (support) {
 	}
 });; //Работа с картинками webP
 function ibg() {
-	if (isIE()) {
-		let ibg = document.querySelectorAll(".ibg");
-		for (var i = 0; i < ibg.length; i++) {
-			if (ibg[i].querySelector('img') && ibg[i].querySelector('img').getAttribute('src') != null) {
-				ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
-			}
-		}
-	}
+    if (isIE()) {
+        let ibg = document.querySelectorAll(".dc-ibg");
+        for (var i = 0; i < ibg.length; i++) {
+            if (ibg[i].querySelector('img') && ibg[i].querySelector('img').getAttribute('src') != null) {
+                ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
+            }
+        }
+    }
 }
 ibg();; //Работа с картинками ibg
-let _slideUp = (target, duration = 500) => {
-	if (!target.classList.contains('_slide')) {
-		target.classList.add('_slide');
-		target.style.transitionProperty = 'height, margin, padding';
-		target.style.transitionDuration = duration + 'ms';
-		target.style.height = target.offsetHeight + 'px';
-		target.offsetHeight;
-		target.style.overflow = 'hidden';
-		target.style.height = 0;
-		target.style.paddingTop = 0;
-		target.style.paddingBottom = 0;
-		target.style.marginTop = 0;
-		target.style.marginBottom = 0;
-		window.setTimeout(() => {
-			target.hidden = true;
-			target.style.removeProperty('height');
-			target.style.removeProperty('padding-top');
-			target.style.removeProperty('padding-bottom');
-			target.style.removeProperty('margin-top');
-			target.style.removeProperty('margin-bottom');
-			target.style.removeProperty('overflow');
-			target.style.removeProperty('transition-duration');
-			target.style.removeProperty('transition-property');
-			target.classList.remove('_slide');
-		}, duration);
-	}
-}
-let _slideDown = (target, duration = 500) => {
-	if (!target.classList.contains('_slide')) {
-		target.classList.add('_slide');
-		if (target.hidden) {
-			target.hidden = false;
-		}
-		let height = target.offsetHeight;
-		target.style.overflow = 'hidden';
-		target.style.height = 0;
-		target.style.paddingTop = 0;
-		target.style.paddingBottom = 0;
-		target.style.marginTop = 0;
-		target.style.marginBottom = 0;
-		target.offsetHeight;
-		target.style.transitionProperty = "height, margin, padding";
-		target.style.transitionDuration = duration + 'ms';
-		target.style.height = height + 'px';
-		target.style.removeProperty('padding-top');
-		target.style.removeProperty('padding-bottom');
-		target.style.removeProperty('margin-top');
-		target.style.removeProperty('margin-bottom');
-		window.setTimeout(() => {
-			target.style.removeProperty('height');
-			target.style.removeProperty('overflow');
-			target.style.removeProperty('transition-duration');
-			target.style.removeProperty('transition-property');
-			target.classList.remove('_slide');
-		}, duration);
-	}
-}
-let _slideToggle = (target, duration = 500) => {
-	if (target.hidden) {
-		return _slideDown(target, duration);
-	} else {
-		return _slideUp(target, duration);
-	}
-}
 
-; //Slide toggle slide-toggle
-window.addEventListener("load", function () {
-	if (document.querySelector('.wrapper')) {
-		setTimeout(function () {
-			document.querySelector('.wrapper').classList.add('_loaded');
-		}, 0);
-	}
-});
-
-let unlock = true;
-; //load-wrapper
-//=================
-//BodyLock
-function body_lock(delay) {
-	let body = document.querySelector("body");
-	if (body.classList.contains('_lock')) {
-		body_lock_remove(delay);
-	} else {
-		body_lock_add(delay);
-	}
-}
-function body_lock_remove(delay) {
-	let body = document.querySelector("body");
-	if (unlock) {
-		let lock_padding = document.querySelectorAll("._lp");
-		setTimeout(() => {
-			for (let index = 0; index < lock_padding.length; index++) {
-				const el = lock_padding[index];
-				el.style.paddingRight = '0px';
-			}
-			body.style.paddingRight = '0px';
-			body.classList.remove("_lock");
-		}, delay);
-
-		unlock = false;
-		setTimeout(function () {
-			unlock = true;
-		}, delay);
-	}
-}
-function body_lock_add(delay) {
-	let body = document.querySelector("body");
-	if (unlock) {
-		let lock_padding = document.querySelectorAll("._lp");
-		for (let index = 0; index < lock_padding.length; index++) {
-			const el = lock_padding[index];
-			el.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
-		}
-		body.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
-		body.classList.add("_lock");
-
-		unlock = false;
-		setTimeout(function () {
-			unlock = true;
-		}, delay);
-	}
-}
-//=================; //body-lock
-//ActionsOnHash
-if (location.hash) {
-	const hsh = location.hash.replace('#', '');
-	if (document.querySelector('.popup_' + hsh)) {
-		popup_open(hsh);
-	} else if (document.querySelector('div.' + hsh)) {
-		_goto(document.querySelector('.' + hsh), 500, '');
-	}
-}; //ActionsOnHash
 
 const navOpen = document.querySelector('.dc-header-nav');
 if (!isMobile.any()) {
@@ -552,15 +418,58 @@ gsap.to('.dc-fullscreen', {
     scale: 0.4,
     opacity: 0.85,
 });
-// animate blur 
-gsap.to('.anim-top-left', {
+// animate servity
+gsap.fromTo('.dc-carousel-wrapper', {
+    scale: 1.9,
+}, {
     scrollTrigger: {
-        trigger: '.dc-fullscreen',
-        start: 'top top',
-        scrub: 2,
+        trigger: '.dc-servity',
+        start: '-=85% top',
+        end: 'top top',
+        scrub: 1,
+        // markers: true
     },
-    opacity: 1,
+    scale: 1,
 });
+gsap.to('.dc-servity', {
+    scrollTrigger: {
+        trigger: '.dc-servity',
+        start: 'top top',
+        // end: 'top top',
+        scrub: 1,
+        // markers: true
+    },
+    scale: 0.65,
+});
+// animate blur left
+gsap.registerPlugin(ScrollTrigger)
+const tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".dc-wrapper",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1,
+        // markers: true
+    }
+});
+tl.to(".dc-animate-left", { opacity: 1, duration: 0.3 })
+tl.to(".dc-animate-left", { top: '70%', duration: 1 })
+tl.to(".dc-animate-left", { top: '35%', duration: 1 })
+tl.to(".dc-animate-left", { top: '70%', left: '90%', duration: 1 })
+tl.to(".dc-animate-left", { top: '60%', left: '15px', duration: 1 })
+tl.to(".dc-animate-left", { top: '20%', left: '0px', x: '-65%', duration: 1 })
+tl.to(".dc-animate-left", { top: '18%', left: '15px', x: '0%', duration: 1 })
+
+
+
+// gsap.to('.dc-animate-left', {
+//     scrollTrigger: {
+//         trigger: '.dc-fullscreen',
+//         start: 'top top',
+//         scrub: 2,
+//     },
+//     opacity: 1,
+// });
 // hero section triger
 // let tlBlur1 = gsap.timeline({
 //     scrollTrigger: {
@@ -575,54 +484,54 @@ gsap.to('.anim-top-left', {
 //     },
 // });
 // tlBlur1.addLabel("start")
-//     .to(".anim-top-left", { opacity: 1, })
+//     .to(".dc-animate-left", { opacity: 1, })
 //     .addLabel("end");
 // ======================
 // servity section triger
-let tlBlur2 = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".dc-servity",
-        start: "-=100 top",
-        end: "+=800",
-        scrub: 1,
-        snap: {
-            snapTo: "labels",
-            duration: { min: 0.2, max: 3 },
-            delay: 0.2,
-            ease: "laniar",
-        },
-        // markers: {
-        //     startColor: 'green',
-        //     endColor: "yellow",
-        // }
-    },
-});
-tlBlur2.addLabel("start")
-    .to(".anim-top-left", { top: '60%', })
-    .addLabel("end");
+// let tlBlur2 = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".dc-servity",
+//         start: "-=100 top",
+//         end: "+=800",
+//         scrub: 1,
+//         snap: {
+//             snapTo: "labels",
+//             duration: { min: 0.2, max: 3 },
+//             delay: 0.2,
+//             ease: "laniar",
+//         },
+//         // markers: {
+//         //     startColor: 'green',
+//         //     endColor: "yellow",
+//         // }
+//     },
+// });
+// tlBlur2.addLabel("start")
+//     .to(".dc-animate-left", { top: '60%', })
+//     .addLabel("end");
 // ======================
 // dc-content section triger
-let tlBlur3 = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".dc-text-icon",
-        start: "top top",
-        end: "+=600",
-        scrub: 1,
-        snap: {
-            snapTo: "labels",
-            duration: { min: 0.2, max: 3 },
-            delay: 0.2,
-            ease: "laniar",
-        },
-        // markers: {
-        //     startColor: 'red',
-        //     endColor: "white",
-        // }
-    },
-});
-tlBlur3.addLabel("start")
-    .to(".anim-top-left", { top: '20%', })
-    .addLabel("end");
+// let tlBlur3 = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".dc-text-icon",
+//         start: "top top",
+//         end: "+=600",
+//         scrub: 1,
+//         snap: {
+//             snapTo: "labels",
+//             duration: { min: 0.2, max: 3 },
+//             delay: 0.2,
+//             ease: "laniar",
+//         },
+//         // markers: {
+//         //     startColor: 'red',
+//         //     endColor: "white",
+//         // }
+//     },
+// });
+// tlBlur3.addLabel("start")
+//     .to(".dc-animate-left", { top: '20%', })
+//     .addLabel("end");
 
 
 
