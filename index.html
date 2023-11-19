@@ -265,14 +265,14 @@
 
 </header>
         <!-- animate item-left -->
-        <!-- <div class="dc-animate dc-animate-left">
+        <div class="dc-animate dc-animate-left">
             <img src="img/anim/blur-1.png" alt="blur">
-        </div> -->
+        </div>
         <!-- animate item-left -->
         <!-- animate item-right -->
-        <!-- <div class="dc-animate dc-animate-right" style="--width:41vw;  --pos-x:-15.5%; --pos-y:-16.5%;">
+        <div class="dc-animate dc-animate-right">
             <img src="img/anim/blur-1.png" alt="blur">
-        </div> -->
+        </div>
         <!-- animate item-right -->
         <main class="dc-page">
             <!-- fullscreen video section -->
@@ -433,7 +433,7 @@
 </div>
             <!-- content box module -->
             <section class="dc-content">
-                <div class="container-xl overflow-hidden">
+                <div class="container-xl ">
                     <div class="row gx-4 gy-40 justify-content-center">
                         <div class="col-md-10 dc-redactor">
                             <h2>Mit Servity mehr Power für Ihre Prozesse</h2>
@@ -441,11 +441,11 @@
                                 das Ihrem Unternehmen ermöglicht, Prozesse zu optimieren, Kosten zu senken oder die
                                 Produktivität zu steigern.</p>
                         </div>
-                        <div class="col-12 ">
+                        <div class="col-12 dc-anim-wrap">
                             <div class="swiper dc-slider-content">
                                 <div class="swiper-wrapper">
                                     <!-- ----- -->
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide dc-anim-item">
                                         <div class="card dc-card-content">
                                             <div class="card-body dc-mb-none">
                                                 <h2 class="card-title">1 Mio.</h2>
@@ -461,7 +461,7 @@
                                         </div>
                                     </div>
                                     <!-- ----- -->
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide dc-anim-item">
                                         <div class="card dc-card-content">
                                             <div class="card-body dc-mb-none">
                                                 <h2 class="card-title">50 Mio.</h2>
@@ -477,7 +477,7 @@
                                         </div>
                                     </div>
                                     <!-- ----- -->
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide dc-anim-item">
                                         <div class="card dc-card-content">
                                             <div class="card-body dc-mb-none">
                                                 <h2 class="card-title">15 Mio.</h2>
@@ -493,7 +493,7 @@
                                         </div>
                                     </div>
                                     <!-- ----- -->
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide dc-anim-item">
                                         <div class="card dc-card-content">
                                             <div class="card-body dc-mb-none">
                                                 <h2 class="card-title">30%</h2>
@@ -524,24 +524,15 @@
             </section>
             <!-- Statement -->
             <section class="dc-scroll dc-statement py-60">
-                <!-- animate item -->
-                <!-- <div class="dc-animate anim-top-left" style="--width:41vw;  --pos-x:-15.5%; --pos-y:-12%;">
-                    <img src="img/anim/blur-1.png" alt="blur">
-                </div> -->
-                <!-- animate item -->
-                <!-- animate item -->
-                <!-- <div class="dc-animate anim-bottom-right" style="--width:31vw; --pos-x:-14%; --pos-y:-15%;">
-                    <img src="img/anim/blur-1.png" alt="blur">
-                </div> -->
-                <!-- animate item -->
-                <div class="container-xl overflow-hidden">
+                <div class="dc-statement-bg"></div>
+                <div class="container-xl ">
                     <div class="row gy-40 justify-content-center">
                         <div class="col-12 dc-redactor">
                             <h2>Gestalte deine Zukunft mit uns </h2>
                             <p class="h4 fw-semibold text-secondary">Mitarbeiter Statement</p>
                         </div>
-                        <div class="col-12">
-                            <div class="splide dc-slider-statement" aria-label="Splide Basic HTML Example">
+                        <div class="col-12 overflow-hidden dc-statement-anim">
+                            <div class="splide dc-slider-statement">
                                 <div class="splide__track">
                                     <ul class="splide__list">
                                         <li class="splide__slide">
@@ -554,7 +545,7 @@
                                                                 alt="statement">
                                                         </div>
                                                         <img class="dc-card-blur dc-blur-1"
-                                                            src="img/anim/blur-card.svg" alt="blur">
+                                                            src="img/anim/blur-card.png" alt="blur">
                                                     </div>
                                                     <div class="dc-card-right">
                                                         <h2>Lars</h2>
@@ -587,7 +578,7 @@
                                                                 alt="statement">
                                                         </div>
                                                         <img class="dc-card-blur dc-blur-2"
-                                                            src="img/anim/blur-card.svg" alt="blur">
+                                                            src="img/anim/blur-card.png" alt="blur">
                                                     </div>
                                                     <div class="dc-card-right">
                                                         <h2>Tabitha</h2>
@@ -620,7 +611,7 @@
                                                                 alt="statement">
                                                         </div>
                                                         <img class="dc-card-blur dc-blur-3"
-                                                            src="img/anim/blur-card.svg" alt="blur">
+                                                            src="img/anim/blur-card.png" alt="blur">
                                                     </div>
                                                     <div class="dc-card-right">
                                                         <h2>Michele</h2>
@@ -653,7 +644,7 @@
                                                                 alt="statement">
                                                         </div>
                                                         <img class="dc-card-blur dc-blur-3"
-                                                            src="img/anim/blur-card.svg" alt="blur">
+                                                            src="img/anim/blur-card.png" alt="blur">
                                                     </div>
                                                     <div class="dc-card-right">
                                                         <h2>Michele</h2>
@@ -682,10 +673,10 @@
                                     <ul class="splide__pagination"></ul>
                                     <div class="splide__arrows">
                                         <button class="splide__arrow bt-slider splide__arrow--prev ic-chevron_left"
-                                            type="button" aria-label="Previous slide" aria-controls="splide01-track">
+                                            type="button">
                                         </button>
                                         <button class="splide__arrow bt-slider splide__arrow--next ic-chevron_right"
-                                            type="button" aria-label="Next slide" aria-controls="splide01-track">
+                                            type="button">
                                         </button>
                                     </div>
                                 </div>
@@ -695,12 +686,7 @@
                 </div>
             </section>
             <!-- teaser -->
-            <section class="dc-teaser dc-scroll">
-                <!-- animate item -->
-                <!-- <div class="dc-animate anim-bottom-left" style="--width:31vw; --pos-x:-12%; --pos-y:-20%;">
-                    <img src="img/anim/blur-1.png" alt="blur">
-                </div> -->
-                <!-- animate item -->
+            <section class="dc-teaser dc-anim-row dc-scroll">
                 <div class="container-xl">
                     <div class="row justify-content-center gy-40">
                         <div class="col-md-10 dc-redactor">
@@ -712,7 +698,7 @@
                         <div class="col-12 ">
                             <div class="row g-0">
                                 <div class="col-md-6 ">
-                                    <div class="dc-imgs-container">
+                                    <div class="dc-imgs-container ">
                                         <div class="dc-ibg dc-img-hover visible" data-hover="img1"><img
                                                 src="img/referenzen.png" alt="referenzen"></div>
                                         <div class="dc-ibg dc-img-hover" data-hover="img2"><img src="img/DCON_live.png"
@@ -886,60 +872,72 @@
 </div>
             <!-- content box module -->
             <section class="dc-content">
-                <div class="container-xl overflow-hidden">
+                <div class="container-xl dc-anim-wrap">
                     <div class="row gx-4 gy-40 justify-content-center">
                         <div class="col-md-10 dc-redactor">
                             <h2>Namhafte Kunden aus verschiedenen Branchen</h2>
                         </div>
-                        <div class="col-12 ">
+                        <div class="col-12 dc-anim-wrap">
                             <div class="swiper dc-slider-content">
                                 <div class="swiper-wrapper">
                                     <!-- ----- -->
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide  dc-anim-item">
                                         <div class="card dc-card-content p-0">
                                             <div class="dc-inner-logo">
+                                                <img src="img/partner/partner-card-2.svg" class="card-img-top"
+                                                    alt="diamler truck">
+                                            </div>
+                                            <div class="dc-card-hover">
                                                 <h2 class="card-title w-75">10 Jahre Partner</h2>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- ----- -->
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide  dc-anim-item">
                                         <div class="card p-0 dc-card-content">
                                             <div class="dc-inner-logo">
                                                 <img src="img/partner/partner-card-2.svg" class="card-img-top"
                                                     alt="diamler truck">
                                             </div>
-
+                                            <div class="dc-card-hover">
+                                                <h2 class="card-title w-75">8 Jahre Partner</h2>
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- ----- -->
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide  dc-anim-item">
                                         <div class="card p-0 dc-card-content">
                                             <div class="dc-inner-logo">
                                                 <img src="img/partner/partner-card-3.svg" class="card-img-top"
                                                     alt="BWI">
                                             </div>
-
+                                            <div class="dc-card-hover">
+                                                <h2 class="card-title w-75">1 Jahre Partner</h2>
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- ----- -->
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide  dc-anim-item">
                                         <div class="card p-0 dc-card-content">
                                             <div class="dc-inner-logo">
                                                 <img src="img/partner/partner-card-4.svg" class="card-img-top"
                                                     alt="Free Universitet Berlin">
                                             </div>
-
+                                            <div class="dc-card-hover">
+                                                <h2 class="card-title w-75">15 Jahre Partner</h2>
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- ----- -->
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide  dc-anim-item">
                                         <div class="card p-0 dc-card-content">
                                             <div class="dc-inner-logo">
                                                 <img src="img/partner/partner-card-4.svg" class="card-img-top"
                                                     alt="Free Universitet Berlin">
                                             </div>
-
+                                            <div class="dc-card-hover">
+                                                <h2 class="card-title w-75">11 Jahre Partner</h2>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -965,22 +963,7 @@
             <!--  -->
             <!-- Tiaser slider  Module -->
             <section class="mb-80 dc-scroll">
-                <!-- animate item -->
-                <!-- <div class="dc-animate anim-top-left" style="--width:31vw; --pos-x:-15.5%; --pos-y:-5%;">
-                    <img src="img/anim/blur-1.png" alt="blur">
-                </div> -->
-                <!-- animate item -->
-                <!-- animate item -->
-                <!-- <div class="dc-animate anim-bottom-left" style="--width:31vw; --pos-x:-15.5%; --pos-y:-55%;">
-                    <img src="img/anim/blur-1.png" alt="blur">
-                </div> -->
-                <!-- animate item -->
-                <!-- animate item -->
-                <!-- <div class="dc-animate anim-bottom-right" style="--width:41vw; --pos-x:-14%; --pos-y:-23%;">
-                    <img src="img/anim/blur-1.png" alt="blur">
-                </div> -->
-                <!-- animate item -->
-                <div class="container-xl overflow-hidden">
+                <div class="container-xl">
                     <div class="row justify-content-center gy-40">
                         <div class="col-md-10 dc-redactor">
                             <h2>Neues von DCON</h2>
@@ -1146,8 +1129,8 @@
                                 <div class="dc-nav-sliders">
                                     <div class="swiper-pagination pagination-teaser"></div>
                                     <div class="d-flex ">
-                                        <button type="button" class="bt-slider next-teaser ic-chevron_left"></button>
-                                        <button type="button" class="bt-slider prev-teaser ic-chevron_right"></button>
+                                        <button type="button" class="bt-slider prev-teaser ic-chevron_left"></button>
+                                        <button type="button" class="bt-slider  next-teaser ic-chevron_right"></button>
                                     </div>
                                 </div>
                             </div>

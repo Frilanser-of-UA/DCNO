@@ -7946,6 +7946,7 @@ body {
 
 section {
   position: relative;
+  overflow: hidden;
 }
 
 .dc-vertical-line {
@@ -8025,8 +8026,10 @@ section {
 
 .dc-animate {
   position: fixed;
-  -webkit-animation: blur 8s ease-out infinite alternate;
-          animation: blur 8s ease-out infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+  -webkit-animation: blur 6s ease-out infinite alternate;
+          animation: blur 6s ease-out infinite alternate;
   width: var(--width);
   -webkit-transition: -webkit-transform 0.3s ease 0s;
   transition: -webkit-transform 0.3s ease 0s;
@@ -8041,21 +8044,62 @@ section {
 .dc-animate.dc-animate-left {
   width: 31vw;
   left: -14vw;
-  top: 115px;
+  top: 165px;
+  opacity: 0;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
-  position: fixed;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0;
 }
 
 .dc-animate.dc-animate-right {
   width: 41vw;
-  right: var(--pos-x);
-  top: var(--pos-y);
+  right: -15.5%;
+  top: 100%;
   -webkit-animation-delay: 0.1s;
           animation-delay: 0.1s;
+}
+
+@-webkit-keyframes blur {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@keyframes blur {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
 }
 
 .dc-ibg {
@@ -8484,10 +8528,47 @@ section {
           justify-content: center;
   height: 100%;
   text-align: center;
+  -webkit-transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
 }
 
 .dc-card-content .dc-inner-logo img {
   width: 75%;
+}
+
+.dc-card-content .dc-card-hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+}
+
+.dc-card-content .dc-card-hover > * {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  height: auto;
+  display: -webkit-box;
 }
 
 .dc-card-teaser {
@@ -8917,6 +8998,14 @@ section {
 
 .dc-slider-content {
   overflow: visible;
+}
+
+.dc-slider-content .swiper-slide {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
 }
 
 .dc-slider-content.swiper-backface-hidden {
@@ -9909,10 +9998,25 @@ footer .dc-partners > .row img {
           transform: scale(1);
 }
 
-.dc-statement {
+.dc-statement .dc-statement-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(29, 29, 27, 0.4);
   backdrop-filter: blur(60px);
   -webkit-backdrop-filter: blur(20px);
+  z-index: 1;
+}
+
+.dc-statement .dc-redactor {
+  position: relative;
+  z-index: 2;
+}
+
+.dc-statement .dc-statement-anim {
+  z-index: 2;
 }
 
 .dc-text-img.dc-text-img-bg {
@@ -19094,6 +19198,16 @@ footer .dc-partners > .row img {
   .dc-card-content:hover::before {
     background: -webkit-gradient(linear, left top, left bottom, from(#767ebb), to(#767ebb)) border-box;
     background: linear-gradient(180deg, #767ebb, #767ebb) border-box;
+  }
+
+  .dc-card-content:hover .dc-inner-logo {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .dc-card-content:hover .dc-card-hover {
+    visibility: visible;
+    opacity: 1;
   }
 
   .dc-card-teaser:hover .dc-card-hover {
