@@ -9201,6 +9201,7 @@ section {
   position: absolute;
   top: 130px;
   left: max(24px, (100% - 1140px) / 2);
+  z-index: 3;
 }
 
 .dc-breadcrumb-wrap .breadcrumb-item {
