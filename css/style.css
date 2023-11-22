@@ -8307,12 +8307,6 @@ section {
   color: #fff;
   text-decoration: none;
   font-weight: 400;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  height: auto;
-  display: -webkit-box;
   -webkit-transition: font-weight 0.25s ease 0s, color 0.25s ease 0s;
   transition: font-weight 0.25s ease 0s, color 0.25s ease 0s;
 }
@@ -19173,7 +19167,7 @@ footer .dc-partners > .row img {
             transform: rotate(-180deg);
   }
 
-  .dc-dropdown-body > div:first-child > ul > li:hover .dc-subropdown {
+  .dc-dropdown-body > div:first-child > ul > li:hover .dc-subdropdown {
     display: block;
   }
 
