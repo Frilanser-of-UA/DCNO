@@ -7949,6 +7949,10 @@ section {
   overflow: hidden;
 }
 
+section:first-child:not(.dc-hero-img, .dc-fullscreen) {
+  margin-top: 195px;
+}
+
 .dc-vertical-line {
   height: 100%;
   width: 1px;
@@ -9243,8 +9247,7 @@ section {
   -webkit-backdrop-filter: blur(20px);
   border-radius: 16px;
   padding: 56px 96px;
-  position: relative;
-  margin-top: -50px;
+  margin-top: -135px;
 }
 
 .dc-description::before {
@@ -9857,8 +9860,8 @@ footer .dc-partners > .row img {
   margin: 0 auto;
 }
 
-.dc-servity {
-  padding: 5rem 0 235px 0;
+.dc-servity [class*=container] {
+  padding-bottom: 200px;
 }
 
 .dc-servity .row {
@@ -9944,17 +9947,13 @@ footer .dc-partners > .row img {
   width: 100%;
 }
 
-.dc-content .container-xl {
+.dc-content [class*=container] {
   padding-bottom: 40px;
 }
 
 .dc-content h2,
 .dc-content .h2 {
   margin-bottom: 0.75rem;
-}
-
-.dc-teaser {
-  margin-top: 96px;
 }
 
 .dc-imgs-container {
@@ -18668,7 +18667,7 @@ footer .dc-partners > .row img {
     font-size: 1.25rem;
   }
 
-  .dc-servity {
+  .dc-servity [class*=container] {
     padding-bottom: 80px;
   }
 
@@ -18946,7 +18945,7 @@ footer .dc-partners > .row img {
     padding-top: 70px;
   }
 
-  .dc-servity {
+  .dc-servity [class*=container] {
     padding-bottom: 40px;
   }
 
