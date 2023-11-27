@@ -388,25 +388,32 @@ if (animFullscreen) {
     });
 }
 // animate servity
-gsap.fromTo('.dc-carousel-wrapper', {
-    scale: 1.9,
-}, {
-    scrollTrigger: {
-        trigger: '.dc-servity',
-        start: '-=85% top',
-        end: 'top top',
-        scrub: 1,
-    },
-    scale: 1,
-});
-gsap.to('.dc-servity', {
-    scrollTrigger: {
-        trigger: '.dc-servity',
-        start: 'top top',
-        scrub: 1,
-    },
-    scale: 0.65,
-});
+let carouselWrp = document.querySelector('.dc-carousel-wrapper');
+let servity = document.querySelector('.dc-servity')
+if (carouselWrp) {
+    gsap.fromTo('.dc-carousel-wrapper', {
+        scale: 1.9,
+    }, {
+        scrollTrigger: {
+            trigger: '.dc-servity',
+            start: '-=85% top',
+            end: 'top top',
+            scrub: 1,
+        },
+        scale: 1,
+    });
+}
+if (servity) {
+    gsap.to('.dc-servity', {
+        scrollTrigger: {
+            trigger: '.dc-servity',
+            start: 'top top',
+            scrub: 1,
+        },
+        scale: 0.65,
+    });
+}
+
 // animate text-icon module
 const animTextIcon = document.querySelector('.dc-text-icon');
 if (animTextIcon) {

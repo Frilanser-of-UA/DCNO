@@ -3392,16 +3392,16 @@ fieldset:disabled .btn {
 }
 
 .card {
-  --bs-card-spacer-y: 2rem;
-  --bs-card-spacer-x: 2rem;
+  --bs-card-spacer-y: 1.5rem;
+  --bs-card-spacer-x: 1.5rem;
   --bs-card-title-spacer-y: 1.5rem;
   --bs-card-border-width: 0px;
   --bs-card-border-color: transparent;
   --bs-card-border-radius: 1rem;
   --bs-card-box-shadow: ;
   --bs-card-inner-border-radius: calc(1rem - 0px);
-  --bs-card-cap-padding-y: 1rem;
-  --bs-card-cap-padding-x: 2rem;
+  --bs-card-cap-padding-y: 1.5rem;
+  --bs-card-cap-padding-x: 1.5rem;
   --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
   --bs-card-cap-color: ;
   --bs-card-height: ;
@@ -8607,12 +8607,13 @@ section:first-child:not(.dc-hero-img, .dc-fullscreen) {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  padding-top: 12px;
 }
 
 .dc-card-teaser .card-body h5,
 .dc-card-teaser .card-body .h5 {
   --row-clamp: 4;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .dc-card-teaser .card-body p {
@@ -10353,6 +10354,15 @@ footer .dc-partners > .row img {
   background: -webkit-gradient(linear, right top, left top, color-stop(0.41%, rgba(255, 255, 255, 0)), color-stop(50.81%, #fff), color-stop(99.79%, rgba(255, 255, 255, 0)));
   background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0.41%, #fff 50.81%, rgba(255, 255, 255, 0) 99.79%);
   margin: 60px auto 0px auto;
+}
+
+.dc-news-grid {
+  padding-bottom: 80px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px 73px;
 }
 
 @media (min-width: 576px) {
@@ -20305,6 +20315,11 @@ footer .dc-partners > .row img {
   .dc-slider-statement .splide__slide.is-active {
     width: 400px !important;
   }
+
+  .dc-news-grid {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 991.98px) and (prefers-reduced-motion: reduce) {
@@ -20595,6 +20610,12 @@ footer .dc-partners > .row img {
   .dc-text-img .row .dc-md .btn {
     margin-top: 24px;
   }
+
+  .dc-news-grid {
+    gap: 16px 32px;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 767.98px) and (prefers-reduced-motion: reduce) {
@@ -20848,6 +20869,12 @@ footer .dc-partners > .row img {
   .dc-content h2,
   .dc-content .h2 {
     font-size: 1.25rem;
+  }
+
+  .dc-news-grid {
+    gap: 24px;
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
